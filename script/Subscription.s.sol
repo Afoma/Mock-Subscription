@@ -1,0 +1,7 @@
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.13;
+
+import {Script} from "forge-std/Script.sol";
+import {Subscription} from "../src/Subscription.sol";
+
+contract SubscriptionScript is Script{}
