@@ -1,13 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.30;
 
-
-interface IERC20 {
-    function transferFrom(address from, address to, uint256 value) external returns (bool);
-}
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract Subscription {
-      address public owner;
+    address public owner;
     IERC20 public usdc;
     uint256 public price; // e.g., 10 USDC = 10e6 if USDC uses 6 decimals
 
@@ -23,7 +20,6 @@ contract Subscription {
     }
 
     function subscribe() external {
-        // Transfer USDC from user to this contract
         require(usdc.transferFrom(msg.sender, address(this), price), "Payment failed");
 
         // Add 30 days to current expiry or now
