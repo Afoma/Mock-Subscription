@@ -1,21 +1,19 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.30;
 
-import {Script} from "forge-std/Script.sol";
-import {console} from "forge-std/console.sol";
-import {Subscription} from "../src/Subscription.sol";
-
+import "forge-std/Script.sol";
+import "../src/Subscription.sol"; 
 
 contract DeployScript is Script {
-    address constant USDC_SEPOLIA = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48;
-    uint256 constant PRICE = 1_000_000; 
-
     function run() external {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
+
+        address usdc = 0xd9cEdEB6C7dfb4b02df7E70975af0136F9E8c7df;
+        uint256 price = 1e6; // 1 USDC
+
         vm.startBroadcast(deployerPrivateKey);
 
-        Subscription subscription = new Subscription(USDC_SEPOLIA, PRICE);
-        console.log("Subscription deployed to:", address(subscription));
+        new Subscription(usdc, price);
 
         vm.stopBroadcast();
     }

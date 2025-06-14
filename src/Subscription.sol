@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 contract Subscription {
     address public owner;
     IERC20 public usdc;
-    uint256 public price; // e.g., 10 USDC = 10e6 if USDC uses 6 decimals
+    uint256 public price; 
 
     mapping(address => uint256) public subscriptions;
 

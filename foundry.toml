@@ -6,11 +6,11 @@ solc_version = "0.8.30"
 etherscan_api_key = "${ETHERSCAN_API_KEY}"
 
 [etherscan]
-# Base Sepolia (chain ID 84532)
-base-sepolia = { key = "${ETHERSCAN_API_KEY}", chain = 84532, url = "https://api-sepolia.basescan.org/api" }
+# Base (chain ID 8453)
+base = { key = "${ETHERSCAN_API_KEY}", chain = 8453, url = "https://api.basescan.org/api" }
 
 [rpc_endpoints]
-base_sepolia = "https://sepolia.base.org"
+base_mainnet = "https://mainnet.base.org"
 
 
 
